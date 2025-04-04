@@ -1,37 +1,62 @@
-# Tab-Master
 # Tab Master Chrome Extension
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/your-extension-id?color=blue&label=Chrome%20Web%20Store)](https://chrome.google.com/webstore/detail/your-extension-id)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Extension Screenshot](./Tab-Master/screenshot.png)
 
-A productivity powerhouse for opening multiple Google searches or URLs with one click. Perfect for researchers, developers, and power users.
+## 🔥 Features
 
-![Extension Screenshot](1.png)
+### 🚀 Bulk Tab Management
+- Open multiple Google searches or URLs simultaneously
+- Supports both keywords (converted to Google searches) and direct URLs
+- One entry per line formatting
 
-## Features ✨
+### � Smart Deduplication
+- Optional duplicate prevention
+- URL normalization (ignores `www`, protocols, trailing slashes)
+- Case-insensitive keyword comparison
 
-- **Bulk Tab Opening**: Open dozens of search queries or URLs simultaneously
-- **Smart Deduplication**: 
-  - Auto-ignore duplicate entries (optional)
-  - URL normalization (ignores `www`, protocols, etc.)
-- **Tab Grouping**:
-  - Organize opened tabs into named groups
-  - Automatic naming based on content
-- **Validation**:
-  - URL format verification
-  - Content-type detection (prevents mixed modes)
-- **Optimized UX**:
-  - Scrollable text area with item counter
-  - Auto-closing popup after execution
-  - Error handling with clear feedback
+### 🗂️ Organized Workspace
+- Optional tab group creation
+- Automatic group naming based on content
+- Color-coded groups (Chrome 89+)
 
-## Installation ⚡
+### ✨ Premium UX
+- Scrollable text area with dynamic counter
+- Real-time validation
+- Auto-closing after execution
+- Error prevention with clear warnings
+
+### ⚡ Efficiency Boosters
+- Lightning-fast execution
+- Minimal permissions required
+- Keyboard-friendly controls
+
+## 🎯 Perfect For
+
+| Use Case | Example |
+|----------|---------|
+| Research | Compare multiple topics side-by-side |
+| SEO Analysis | Check competitor websites |
+| Daily Workflow | Open all daily tools with one click |
+| Shopping | Compare products across stores |
+
+## 🛠️ Installation
 
 ### Chrome Web Store
-1. Visit [Chrome Web Store listing](https://chrome.google.com/webstore/detail/your-extension-id)
+1. Visit [Tab Master on Chrome Web Store](#)
 2. Click "Add to Chrome"
 
-### Manual Installation
-```bash
-git clone https://github.com/yourusername/tab-master.git
-cd tab-master
+### Manual Load
+1. Download the `dist.zip` from Releases
+2. Unzip and go to `chrome://extensions`
+3. Enable Developer Mode
+4. Click "Load unpacked" and select folder
+
+## 🚦 Usage
+
+```text
+1. Select mode: [Keywords] or [URLs]
+2. Paste your list (one per line)
+3. Set options:
+   ☑ Ignore duplicates
+   ☑ Create tab group
+4. Click "Open Tabs"
