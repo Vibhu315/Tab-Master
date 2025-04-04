@@ -1,0 +1,351 @@
+:root {
+    --primary: #6366F1;
+    --primary-dark: #4F46E5;
+    --primary-light: #818CF8;
+    --primary-gradient: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 50%, #D946EF 100%);
+    --primary-hover-gradient: linear-gradient(135deg, var(--primary-dark) 0%, #7C3AED 50%, #C026D3 100%);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition-base: all 0.3s ease;
+    --ring-offset-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+    --ring-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --success: #10B981;
+    --error: #EF4444;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 620px;
+    margin: 0;
+    padding: 24px;
+    background: var(--gray-50);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+#container {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+#container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--primary-gradient);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header .logo {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.header .subtitle {
+    margin: 4px 0 0;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.radio-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: var(--transition-base);
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--gray-100);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.radio-label svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+input[type="radio"]:checked + .radio-label {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.radio-label:hover {
+    background: var(--gray-200);
+    border-color: var(--gray-300);
+}
+
+input[type="radio"]:checked + .radio-label:hover {
+    background: var(--primary-hover-gradient);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    color: var(--gray-600);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: var(--transition-base);
+}
+
+#inputLabel {
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+textarea {
+    width: 100%;
+    height: 140px;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 16px;
+    resize: none;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    box-sizing: border-box;
+    transition: var(--transition-base);
+    background-color: var(--gray-50);
+    color: var(--gray-700);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+    background-color: white;
+}
+
+textarea::placeholder {
+    color: var(--gray-400);
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    background: rgba(255,255,255,0.9);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+.settings {
+    background: var(--gray-50);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--gray-200);
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.setting-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.setting-item label {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    cursor: pointer;
+    user-select: none;
+}
+
+button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-top: 12px;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+button:hover {
+    background: var(--primary-hover-gradient);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--shadow-md);
+}
+
+.status-message {
+    margin-top: 16px;
+    font-size: 0.875rem;
+    text-align: center;
+    min-height: 20px;
+    transition: var(--transition-base);
+}
+
+.status-message.success {
+    color: var(--success);
+}
+
+.status-message.error {
+    color: var(--error);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+    
+    #container {
+        padding: 24px;
+    }
+    
+    .radio-label {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+}
+/* Add this to your existing CSS */
+.settings {
+    background: var(--gray-50);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--gray-200);
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.setting-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.setting-item label {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    cursor: pointer;
+    user-select: none;
+}

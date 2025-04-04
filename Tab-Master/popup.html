@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Master - Open Multiple Tabs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <svg class="logo" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 3V5M15 3V5M9 19V21M15 19V21M5 9H3M5 15H3M21 9H19M21 15H19M7 19H17C18.1046 19 19 18.1046 19 17V7C19 5.89543 18.1046 5 17 5H7C5.89543 5 5 5.89543 5 7V17C5 18.1046 5.89543 19 7 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h1>Tab Master</h1>
+            <p class="subtitle">Open multiple tabs with ease</p>
+        </div>
+
+        <div class="radio-group">
+            <input type="radio" id="keywords" name="inputType" value="keywords" checked>
+            <label for="keywords" class="radio-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Search Queries
+            </label>
+        
+            <input type="radio" id="urls" name="inputType" value="urls">
+            <label for="urls" class="radio-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.828 10.172C12.266 8.609 9.734 8.609 8.172 10.172L4.343 14C1.22 17.123 1.22 22.033 4.343 25.156C7.467 28.28 12.377 28.28 15.5 25.156L19.328 21.328" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.172 13.828C11.734 15.391 14.266 15.391 15.828 13.828L19.657 10C22.78 6.877 22.78 1.967 19.657 -1.156C16.533 -4.28 11.623 -4.28 8.5 -1.156L4.672 2.672" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Open URLs
+            </label>
+        </div>
+        
+        <div class="input-group">
+            <label for="inputData" id="inputLabel">Enter search queries (one per line)</label>
+            <textarea id="inputData" placeholder="Example: chrome extensions\nweb development 2023\nbest productivity tools"></textarea>
+            <div class="char-counter"><span id="charCount">0</span> items</div>
+        </div>
+        
+        <div class="settings">
+            <div class="setting-item">
+                <input type="checkbox" id="ignoreDuplicates" checked>
+                <label for="ignoreDuplicates">Ignore duplicate entries</label>
+            </div>
+            <div class="setting-item">
+                <input type="checkbox" id="newTabGroup">
+                <label for="newTabGroup">Open in new tab group</label>
+            </div>
+        </div>
+        <button id="openTabs">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 6V12M12 12V18M12 12H18M12 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Open Tabs
+        </button>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

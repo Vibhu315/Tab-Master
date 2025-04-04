@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Master",
+    "version": "1.4",
+    "description": "Easily open multiple search queries or URLs in tabs",
+    "permissions": ["tabs", "tabGroups"],
+    "host_permissions": ["https://www.google.com/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "1.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
