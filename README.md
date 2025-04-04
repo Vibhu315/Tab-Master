@@ -6,7 +6,7 @@
 
 A productivity powerhouse for opening multiple Google searches or URLs with one click. Perfect for researchers, developers, and power users.
 
-![Extension Screenshot](screenshot.png)
+![Extension Screenshot](1.png)
 
 ## Features ✨
 
